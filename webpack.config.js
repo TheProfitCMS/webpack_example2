@@ -6,7 +6,8 @@ let webPackConfig = {
   context: __dirname + '/__SRC/assets',
 
   entry: {
-    'assets/css/reset.css': './css/reset.css'
+    'assets/css/reset.css': './css/reset.css',
+    'assets/js/app.js': './js/app.js'
   },
 
   // https://github.com/webpack/docs/wiki/configuration#output
@@ -16,6 +17,12 @@ let webPackConfig = {
 
     chunkFilename: "[chunkhash]-[name]",
     filename: "[name]"
+  }
+}
+
+webPackConfig.resolve = {
+  alias: {
+    css_path: __dirname + "/__SRC/assets/css/"
   }
 }
 
