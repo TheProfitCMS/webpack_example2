@@ -6,7 +6,6 @@ let webPackConfig = {
   context: __dirname + '/__SRC/assets',
 
   entry: {
-    'assets/css/reset.css': './css/reset.css',
     'assets/js/app.js': './js/app.js'
   },
 
@@ -22,13 +21,26 @@ let webPackConfig = {
 
 webPackConfig.resolve = {
   alias: {
-    css_path: __dirname + "/__SRC/assets/css/"
+    css_path: __dirname + "/__SRC/assets/css/",
+    js_path:  __dirname + "/__SRC/assets/js/"
   }
 }
 
 webPackConfig.module = {
   loaders: [
-    { test: /\.css$/, loader: 'style-loader!css-loader' }
+    {
+      test:   /\.js/,
+      loader: 'babel',
+      exclude: /(node_modules|bower_components)/,
+      query: {
+        presets: ['es2015']
+      }
+    },
+
+    {
+      test:    /\.css$/,
+      loader: 'style-loader!css-loader'
+    }
   ]
 }
 

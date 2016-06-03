@@ -2,7 +2,10 @@
 
 ```
 npm install webpack --save
+npm install babel-loader babel-core babel-preset-es2015 --save
+
 npm install css-loader --save
+npm install style-loader --save
 npm install extract-text-webpack-plugin --save
 ```
 
