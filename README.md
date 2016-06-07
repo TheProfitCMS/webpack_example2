@@ -9,6 +9,8 @@ npm install style-loader --save
 npm install node-sass --save
 npm install sass-loader --save
 npm install extract-text-webpack-plugin --save
+
+npm install node-inspector --save
 ```
 
-(rm -rf ./public/assets/) && webpack --progress --colors
+npm run build

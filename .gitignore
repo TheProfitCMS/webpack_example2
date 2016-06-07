@@ -1,3 +1,4 @@
-public/assets/
+npm-debug.log
+public/assets
 node_modules
 .DS_Store

@@ -1,6 +1,7 @@
 'use strict';
 
 const webpack = require('webpack')
+
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 let webPackConfig = {}
