@@ -1,11 +1,14 @@
 'use strict';
 
 const webpack = require('webpack')
-let webPackConfig = {}
-
-webPackConfig.plugins = []
-webPackConfig.devtool = 'source-map'
-webPackConfig.context = __dirname + '/__SRC/assets';
+let webPackConfig = {
+  plugins: [],
+  module:  {},
+  resolve: {},
+  resolveLoader: {},
+  devtool: 'source-map',
+  context: `${ __dirname }/__SRC/assets`
+}
 
 webPackConfig.entry = {
   'assets/js/app.js': './js/app'
@@ -20,18 +23,16 @@ webPackConfig.output = {
   filename: "[name]"
 }
 
-webPackConfig.resolve = webPackConfig.resolve || {}
 webPackConfig.resolve.alias = {
   css_path: __dirname + "/__SRC/assets/css/",
   js_path:  __dirname + "/__SRC/assets/js/"
 }
 
-webPackConfig.resolveLoader = webPackConfig.resolveLoader || {}
+// http://webpack.github.io/docs/configuration.html#resolveloader
 webPackConfig.resolveLoader.modulesDirectories = [
-  '.', 'node_modules', 'web_loaders', 'web_modules', 'node_loaders'
+  './LOADERS', 'node_modules', 'web_loaders', 'web_modules', 'node_loaders'
 ]
 
-webPackConfig.module = webPackConfig.module || {}
 webPackConfig.module.loaders = [
   {
     test:   /\.js/,
