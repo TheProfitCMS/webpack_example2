@@ -4,7 +4,11 @@
 */
 var loaderUtils = require("loader-utils"),
 	path = require("path");
-module.exports = function() {};
+module.exports = function(content) {
+  log("\n********************************")
+  log('STYLE', content.slice(0, 20))
+  log('\n********************************')
+};
 module.exports.pitch = function(remainingRequest) {
 	if(this.cacheable) this.cacheable();
 	var query = loaderUtils.parseQuery(this.query);
