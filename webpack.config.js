@@ -1,5 +1,7 @@
 'use strict';
 
+global.log = function(){ console.log.apply(console, arguments) }
+
 const webpack = require('webpack')
 let webPackConfig = {
   plugins: [],
@@ -43,17 +45,17 @@ webPackConfig.module.loaders = [
 
   {
     test:   /\.css$/,
-    loaders: ['style', 'css?sourceMap', 'first-loader']
+    loaders: ['second-loader', 'style', 'css?sourceMap', 'first-loader']
   },
 
   {
     test: /\.sass$/,
-    loaders: ['style', 'css?sourceMap', 'sass?sourceMap&indentedSyntax']
+    loaders: ['second-loader', 'style', 'css?sourceMap', 'sass?sourceMap&indentedSyntax', 'first-loader']
   },
 
   {
     test: /\.scss$/,
-    loaders: ['style', 'css?sourceMap', 'sass?sourceMap']
+    loaders: ['second-loader', 'style', 'css?sourceMap', 'sass?sourceMap', 'first-loader']
   }
 ]
 
