@@ -1,0 +1,16 @@
+{
+  "name": "first-loader",
+  "version": "1.0.0",
+  "author": "Ilya N. Zykin",
+  "description": "first loader module for webpack",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:TheProfitCMS/webpack_example2.git"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/mit-license.php"
+    }
+  ]
+}
