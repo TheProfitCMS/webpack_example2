@@ -43,7 +43,7 @@ webPackConfig.module.loaders = [
 
   {
     test:   /\.css$/,
-    loaders: ['first-loader', 'style', 'css?sourceMap']
+    loaders: ['style', 'css?sourceMap', 'first-loader']
   },
 
   {
