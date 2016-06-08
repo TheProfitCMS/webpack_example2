@@ -1,11 +1,22 @@
+
+
+var loaderUtils = require("loader-utils");
+
 module.exports = function(content) {
   log("\n********************************")
   log('SECOND', content.slice(0, 200))
-  log('\n********************************')
+  log("\n********************************")
 
+  debugger
+  // entry
   this.cacheable();
   return content
 }
+
+// this._compilation.entries[0].resource
+// this._compilation.entries[0].rawRequest
+// this._compilation.compiler.outputPath
+// this._compilation.compiler.options.output.path
 
 // for(var i in this){ log(i) }
 // =>
