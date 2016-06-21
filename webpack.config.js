@@ -1,8 +1,12 @@
+require('./log')
+
+let ExtractTextPlugin = require('./LOADERS/extract-text-webpack-plugin');
+let extractCSS = new ExtractTextPlugin('assets/css/main.css');
+
 'use strict';
 
-global.log = function(){ console.log.apply(console, arguments) }
+let webpack = require('webpack')
 
-const webpack = require('webpack')
 let webPackConfig = {
   plugins: [],
   module:  {},
@@ -13,7 +17,8 @@ let webPackConfig = {
 }
 
 webPackConfig.entry = {
-  'assets/js/app.js': './js/app'
+  'assets/js/app.js': './js/app',
+  'assets/js/vendors.js': './js/vendors'
 }
 
 // https://github.com/webpack/docs/wiki/configuration#output
@@ -24,6 +29,10 @@ webPackConfig.output = {
   chunkFilename: "[chunkhash]-[name]",
   filename: "[name]"
 }
+
+webPackConfig.plugins = [
+  extractCSS
+]
 
 webPackConfig.resolve.alias = {
   css_path: __dirname + "/__SRC/assets/css/",
@@ -45,17 +54,17 @@ webPackConfig.module.loaders = [
 
   {
     test:   /\.css$/,
-    loaders: ['second-loader', 'style', 'css?sourceMap', 'first-loader']
+    loader: extractCSS.extract(['second-loader', 'css?sourceMap', 'first-loader'])
   },
 
   {
     test: /\.sass$/,
-    loaders: ['second-loader', 'style', 'css?sourceMap', 'sass?sourceMap&indentedSyntax', 'first-loader']
+    loader: extractCSS.extract(['css?sourceMap', 'sass?sourceMap&indentedSyntax'])
   },
 
   {
     test: /\.scss$/,
-    loaders: ['second-loader', 'style', 'css?sourceMap', 'sass?sourceMap', 'first-loader']
+    loader: extractCSS.extract(['css?sourceMap', 'sass?sourceMap'])
   }
 ]
 

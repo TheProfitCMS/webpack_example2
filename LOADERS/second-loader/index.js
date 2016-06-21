@@ -1,5 +1,3 @@
-
-
 var loaderUtils = require("loader-utils");
 
 module.exports = function(content) {
@@ -7,8 +5,9 @@ module.exports = function(content) {
   log('SECOND', content.slice(0, 200))
   log("\n********************************")
 
-  debugger
   // entry
+  debugger
+
   this.cacheable();
   return content
 }

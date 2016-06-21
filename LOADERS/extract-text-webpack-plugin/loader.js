@@ -9,10 +9,12 @@ var LibraryTemplatePlugin = require("webpack/lib/LibraryTemplatePlugin");
 var SingleEntryPlugin = require("webpack/lib/SingleEntryPlugin");
 var LimitChunkCountPlugin = require("webpack/lib/optimize/LimitChunkCountPlugin");
 module.exports = function(source) {
+	debugger
 	if(this.cacheable) this.cacheable();
 	return source;
 };
 module.exports.pitch = function(request) {
+	debugger
 	if(this.cacheable) this.cacheable();
 	var query = loaderUtils.parseQuery(this.query);
 	this.addDependency(this.resourcePath);
