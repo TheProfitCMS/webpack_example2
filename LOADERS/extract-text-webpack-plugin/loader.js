@@ -9,7 +9,11 @@ var LibraryTemplatePlugin = require("webpack/lib/LibraryTemplatePlugin");
 var SingleEntryPlugin = require("webpack/lib/SingleEntryPlugin");
 var LimitChunkCountPlugin = require("webpack/lib/optimize/LimitChunkCountPlugin");
 module.exports = function(source) {
+
+	// EXTRACT TEXT PLUGIN
 	debugger
+	// EXTRACT TEXT PLUGIN
+
 	if(this.cacheable) this.cacheable();
 	return source;
 };

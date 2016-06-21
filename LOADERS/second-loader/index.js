@@ -5,8 +5,9 @@ module.exports = function(content) {
   log('SECOND', content.slice(0, 200))
   log("\n********************************")
 
-  // entry
+  // SECOND LOADER
   debugger
+  // SECOND LOADER
 
   this.cacheable();
   return content
