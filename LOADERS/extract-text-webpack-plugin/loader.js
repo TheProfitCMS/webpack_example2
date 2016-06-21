@@ -18,7 +18,10 @@ module.exports = function(source) {
 	return source;
 };
 module.exports.pitch = function(request) {
+	// PITCH EXTRACT TEXT PLUGIN
 	debugger
+	// EXTRACT TEXT PLUGIN
+
 	if(this.cacheable) this.cacheable();
 	var query = loaderUtils.parseQuery(this.query);
 	this.addDependency(this.resourcePath);
