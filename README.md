@@ -93,5 +93,5 @@ npm install node-inspector --save
 * repl - Open debugger's repl for evaluation in debugging script's context
 * exec expr
 
-http://stackoverflow.com/questions/34277209/can-a-webpack-loader-be-given-the-entry-point-the-current-loaded-file-is-destine
-https://github.com/webpack/webpack/pull/1783
+- http://stackoverflow.com/questions/34277209/can-a-webpack-loader-be-given-the-entry-point-the-current-loaded-file-is-destine
+- https://github.com/webpack/webpack/pull/1783
